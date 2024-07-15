@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zed West Towers</title>
+    <link rel="stylesheet" href="property-styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const typeSelect = document.getElementById('type');
+            const detailsDiv = document.getElementById('details');
+
+            const propertyDetails = {
+                'Tower G': `
+                    <table>
+                        <tr><th>Floor</th><th>Size (Sqm)</th><th>Type</th><th>Down Payment</th><th>Total Price</th></tr>
+                        <tr><td>G-4-1</td><td>129</td><td>2</td><td>2,220,364.724</td><td>9,029,876</td></tr>
+                        <tr><td>G-4-2</td><td>76</td><td>1</td><td>1,313,747.558</td><td>5,342,806</td></tr>
+                        <tr><td>G-4-3</td><td>185</td><td>3</td><td>4,155,463.644</td><td>14,207,242</td></tr>
+                        <tr><td>G-4-4</td><td>108</td><td>1</td><td>2,580,517.135</td><td>8,510,505</td></tr>
+                        <tr><td>G-4-6</td><td>195</td><td>3</td><td>4,679,225.225</td><td>15,432,099</td></tr>
+                        <tr><td>G-4-7</td><td>155</td><td>3</td><td>3,651,457.749</td><td>12,042,449</td></tr>
+                        <tr><td>G-5-1</td><td>129</td><td>2</td><td>2,211,985.767</td><td>8,995,801</td></tr>
+                        <tr><td>G-5-3</td><td>89</td><td>1</td><td>1,620,582.709</td><td>6,590,661</td></tr>
+                        <tr><td>G-5-4</td><td>183</td><td>3</td><td>5,702,812.192</td><td>16,012,683</td></tr>
+                        <tr><td>G-5-5</td><td>155</td><td>3</td><td>2,977,118.44</td><td>11,626,935</td></tr>
+                        <tr><td>G-6-1</td><td>129</td><td>2</td><td>2,220,364.724</td><td>9,029,876</td></tr>
+                        <tr><td>G-6-2</td><td>76</td><td>1</td><td>1,313,747.558</td><td>5,342,806</td></tr>
+                        <tr><td>G-6-3</td><td>89</td><td>1</td><td>1,520,856.441</td><td>6,185,085</td></tr>
+                        <tr><td>G-6-5</td><td>158</td><td>2</td><td>3,671,644.165</td><td>12,109,024</td></tr>
+                        <tr><td>G-6-6</td><td>162</td><td>2</td><td>3,802,631.583</td><td>12,541,018</td></tr>
+                        <tr><td>G-6-7</td><td>255</td><td>4</td><td>5,996,711.588</td><td>19,777,059</td></tr>
+                        <tr><td>G-7-1</td><td>129</td><td>2</td><td>2,211,985.869</td><td>8,995,801</td></tr>
+                        <tr><td>G-7-3</td><td>89</td><td>1</td><td>1,520,856.441</td><td>6,185,085</td></tr>
+                        <tr><td>G-7-4</td><td>197</td><td>3</td><td>4,590,758.237</td><td>15,140,248</td></tr>
+                        <tr><td>G-8-1</td><td>129</td><td>2</td><td>2,251,045.188</td><td>9,154,649</td></tr>
+                        <tr><td>G-8-2</td><td>153</td><td>2</td><td>2,892,619.079</td><td>11,508,804</td></tr>
+                        <tr><td>G-8-3</td><td>184</td><td>2</td><td>4,492,843.919</td><td>14,817,328</td></tr>
+                        <tr><td>G-8-4</td><td>158</td><td>2</td><td>3,741,215.937</td><td>12,338,471</td></tr>
+                        <tr><td>G-8-5</td><td>162</td><td>2</td><td>3,849,896.345</td><td>12,696,897</td></tr>
+                        <tr><td>G-9-2</td><td>202</td><td>3</td><td>3,040,021.658</td><td>14,681,043</td></tr>
+                        <tr><td>G-10-1</td><td>129</td><td>2</td><td>2,246,824.263</td><td>9,137,483</td></tr>
+                        <tr><td>G-10-2</td><td>202</td><td>3</td><td>3,679,860.233</td><td>14,965,416</td></tr>
+                        <tr><td>G-10-3</td><td>242</td><td>4</td><td>5,829,184.72</td><td>19,224,558</td></tr>
+                    </table>
+                `
+            };
+
+            typeSelect.addEventListener('change', function() {
+                const selectedType = typeSelect.value;
+
+                if (selectedType) {
+                    detailsDiv.innerHTML = propertyDetails[selectedType];
+                } else {
+                    detailsDiv.innerHTML = '';
+                }
+            });
+        });
+    </script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Zed West Towers</h1>
+        <form id="propertyForm">
+            <label for="type">Choose Tower:</label>
+            <select id="type" required>
+                <option value="">--Choose a tower--</option>
+                <option value="Tower G">Tower G</option>
+            </select>
+
+            <label for="details">Details:</label>
+            <div id="details"></div>
+        </form>
+    </div>
+</body>
+</html>
